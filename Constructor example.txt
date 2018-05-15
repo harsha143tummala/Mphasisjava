@@ -1,0 +1,20 @@
+package hari.sow;
+
+public class Constoverload {
+Constoverload()
+{
+	System.out.println("the input is  over load");
+}
+Constoverload(int a,int b)
+{
+	System.out.println("the sum is"+(a+b));
+}
+int sum(int x,int y){return(x+y);}
+	public static void main(String[] args) {
+Constoverload ob=new Constoverload();
+Constoverload ob1=new Constoverload(2,33);
+Constoverload obb=new Constoverload(33,44);
+System.out.println("the return ans is "+ob.sum(23, 1));
+	}
+
+}
