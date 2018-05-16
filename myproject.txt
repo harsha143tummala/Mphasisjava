@@ -1,0 +1,93 @@
+package com.may16;
+import java.util.*;
+
+interface account{
+	void createAccount();
+	void deposite();
+	void withDraw();
+	void balCheck();
+	
+}
+
+
+ class Bank implements account{
+
+
+	 String firstname,lastname,gender,address;
+	 int age;
+	 long phno;
+	 float depositeamount,withdrawamount,balance,openbal=5000;
+	 static int array[]={1,2,3,4,5,6,7,8,9};
+	 
+	 Scanner ob=new Scanner(System.in);
+	 
+	 public void createAccount(){
+		 System.out.println("Enter First name");
+		 firstname=ob.next();
+		 System.out.println("Enter Last name");
+		 lastname=ob.next();
+		 System.out.println("Enter your age");
+		 age=ob.nextInt();
+		 System.out.println("enter your gender");
+	     gender=ob.next();
+	     System.out.println("enter your mobile number");
+	     phno=ob.nextLong();
+	     System.out.println("enter your address");
+	     address=ob.next();
+	     System.out.println("your acount has been created successfully");
+	    balance=openbal;
+	 }
+     public void deposite(){
+    	System.out.println("Enter the amount to be deposited");
+    	depositeamount=ob.nextFloat();
+    	balance=balance+depositeamount;
+    	System.out.println("the fianl balance is "+balance);
+     }
+	 
+     public void withDraw(){
+    	 System.out.println("enter the amount to be withdrawed");
+    	 withdrawamount=ob.nextFloat();
+    	 if(balance>=withdrawamount){
+    	 balance=balance-withdrawamount;
+    	 System.out.println("the fianl balance is "+balance);
+    	 }
+    	 else{
+    		 System.out.println("You donot have sufficient balance");
+    	 }
+     }
+    	 public void balCheck(){
+    		 System.out.println("your balance is "+balance);
+    	 }
+    	 
+    	
+    	 
+    	 public static void main(String[] args)
+    	 {
+    		 Bank bn=new Bank();
+    	     String activity;
+    	     System.out.println("enteer the activity to perform\n 1. c for create account \n 2.d for deposite \n 3. w for withdraw \n 4.b for balance check");
+    	     Scanner ob=new Scanner(System.in);
+    	     activity=ob.next();
+    	     char g=activity.charAt(0);
+    		
+    	     if(g=='c')
+    		 {
+    		
+    			 bn.createAccount();
+    			}
+    		 else if(g=='d'){
+    			 bn.deposite();
+    		 }
+    		 else if(g=='w'){
+    			 bn.withDraw();
+    		 }
+    		 else if (g=='b'){
+    			 bn.balCheck();
+    		 }
+    		 
+ 		}
+     
+  }
+    	 
+	
+
